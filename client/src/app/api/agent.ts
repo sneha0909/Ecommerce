@@ -5,6 +5,8 @@ import { history } from "../..";
 const sleep = () => new Promise(resolve => setTimeout(resolve, 500));
 
 axios.defaults.baseURL = 'http://localhost:5000/api/';
+//axios.defaults.withCredentials = true;
+//axios.defaults.withCredentials = true;
 axios.defaults.withCredentials = true;
 
 const responseBody = (response: AxiosResponse) => response.data;
@@ -48,6 +50,8 @@ const requests = {
     put: (url: string, body: {}) => axios.put(url, body).then(responseBody),
     delete: (url: string) => axios.delete(url).then(responseBody),
 }
+
+
 
 const Catalog = {
     list: () => requests.get('products'),
