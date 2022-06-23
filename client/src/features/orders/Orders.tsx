@@ -12,7 +12,7 @@ export default function Orders() {
     const [selectedOrderNumber, setSelectedOrderNumber] = useState(0);
 
     useEffect(() => {
-        setLoading(true);
+        //setLoading(true);
         agent.Orders.list()
            .then(orders => setOrders(orders))
            .catch(error => console.log(error))
