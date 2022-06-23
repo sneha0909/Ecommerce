@@ -15,11 +15,11 @@ namespace API.Controllers
 {
     
     [Authorize]
-    public class OrderController : BaseApiController
+    public class OrdersController : BaseApiController
     {
         private readonly StoreContext _context;
 
-        public OrderController(StoreContext context)
+        public OrdersController(StoreContext context)
         {
             _context = context;
         }

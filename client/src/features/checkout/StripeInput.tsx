@@ -14,7 +14,7 @@ export const StripeInput = forwardRef(function StripeInput({component: Component
 
           return  (
             <Component
-                onReady={(element: any) => element.Ref.current = element}
+                onReady={(element: any) => elementRef.current = element}
                 {...props}
             />
           )
