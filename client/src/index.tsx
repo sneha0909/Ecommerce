@@ -3,28 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './app/layout/style.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
-import { Router } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './app/store/configureStore';
-
-export const history = createBrowserHistory();
+import { router } from './app/router/routes';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
 
-
-  <Router history={history}>
     <React.StrictMode>
       
         <Provider store={store}>
+          <RouterProvider router={router} />
         <App />
         </Provider>   
       
     </React.StrictMode>
-  </Router>
+
 
 
 );
