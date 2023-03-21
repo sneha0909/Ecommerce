@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { fetchFilters, fetchProductsAsync, productSelectors } from "../../features/catalog/catalogSlice";
-import { useAppDispatch, useAppSelector } from "../store/configureStore";
+import { useAppSelector, useAppDispatch } from "../store/configureStore";
+// import { useAppDispatch, useAppSelector } from "../store/configureStore";
 
 export default function useProducts() {
     const products = useAppSelector(productSelectors.selectAll);
