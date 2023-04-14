@@ -34,7 +34,7 @@ namespace API.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Baskets");
+                    b.ToTable("Baskets", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.BasketItem", b =>
@@ -58,7 +58,7 @@ namespace API.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("BasketItems");
+                    b.ToTable("BasketItems", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.OrderAggregate.Order", b =>
@@ -87,7 +87,7 @@ namespace API.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.OrderAggregate.OrderItem", b =>
@@ -109,7 +109,7 @@ namespace API.Data.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderItem");
+                    b.ToTable("OrderItem", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.Product", b =>
@@ -144,7 +144,7 @@ namespace API.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("API.Entities.Role", b =>
@@ -283,7 +283,7 @@ namespace API.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserAddress");
+                    b.ToTable("UserAddress", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -406,7 +406,7 @@ namespace API.Data.Migrations
 
             modelBuilder.Entity("API.Entities.OrderAggregate.Order", b =>
                 {
-                    b.OwnsOne("API.Entities.OrderAggregate.ShippingAddress", "ShippingAddress", b1 =>
+                    b.OwnsOne("API.Entities.OrderAggregate.Order.ShippingAddress#API.Entities.OrderAggregate.ShippingAddress", "ShippingAddress", b1 =>
                         {
                             b1.Property<int>("OrderId")
                                 .HasColumnType("INTEGER");
@@ -434,7 +434,7 @@ namespace API.Data.Migrations
 
                             b1.HasKey("OrderId");
 
-                            b1.ToTable("Orders");
+                            b1.ToTable("Orders", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("OrderId");
@@ -449,7 +449,7 @@ namespace API.Data.Migrations
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId");
 
-                    b.OwnsOne("API.Entities.OrderAggregate.ProductItemOrdered", "ItemOrdered", b1 =>
+                    b.OwnsOne("API.Entities.OrderAggregate.OrderItem.ItemOrdered#API.Entities.OrderAggregate.ProductItemOrdered", "ItemOrdered", b1 =>
                         {
                             b1.Property<int>("OrderItemId")
                                 .HasColumnType("INTEGER");
@@ -465,7 +465,7 @@ namespace API.Data.Migrations
 
                             b1.HasKey("OrderItemId");
 
-                            b1.ToTable("OrderItem");
+                            b1.ToTable("OrderItem", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("OrderItemId");
